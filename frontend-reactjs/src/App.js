@@ -14,7 +14,6 @@ import ProductPage from "./pages/Management/ProductPage";
 import DiscountPage from "./pages/Sales/Products/DiscountPage";
 import StockPage from "./pages/Sales/Products/StockPage";
 
-numeral.locale("vi");
 const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
@@ -26,7 +25,10 @@ function App() {
           </Sider>
           <Layout>
             <Header style={{ background: "#1E90FF" }}>
+              <div>
               <h1 style={{ color: "white" }}>Online Shop</h1>
+                
+              </div>
             </Header>
 
             <Content style={{ padding: 0 }}>
@@ -34,7 +36,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
 
                 {/* Management */}
-                <Route path="home" element={<HomePage />} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/management/products" element={<ProductPage />} />
                 <Route
                   path="/management/customers"
@@ -47,7 +49,7 @@ function App() {
                   element={<DiscountPage />}
                 />
                 <Route path="/sales/products/stock" element={<StockPage />} />
-
+                
                 {/* NO MATCH ROUTE */}
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
